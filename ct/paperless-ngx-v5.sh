@@ -360,7 +360,7 @@ msg_info "Updating to ${RELEASE}"
   sed -i -e 's|-e git+https://github.com/paperless-ngx/django-q.git|git+https://github.com/paperless-ngx/django-q.git|' /opt/paperless/requirements.txt
   pip install -r requirements.txt &>/dev/null
   cd /opt/paperless/src
-  /usr/bin/python3 manage.py migrate &>/dev/null
+  /usr/bin/python3 src/manage.py migrate &>/dev/null
   if [ -f "$SER" ]; then
       msg_ok "paperless-task-queue.service Exists."
   else
